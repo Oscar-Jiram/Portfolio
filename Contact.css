@@ -1,56 +1,59 @@
-form{
-font-size: 1.2rem;
+form {
+    font-size: 1.2rem;
+    text-align: center; /* Centro el formulario */
+    max-width: 600px; /* Establezco un ancho máximo para el formulario */
+    margin: 0 auto; /* Centro el formulario horizontalmente */
 }
-form label{
-    display: block;
-    width: 50%;
-    margin: 0 auto;
 
+form label {
+    display: block;
+    width: 100%; /* Hago que el label ocupe el 100% del ancho */
+    margin-bottom: 1rem; /* Agrego margen inferior para separar los elementos */
 }
+
 input,
-textarea,input:focus,
-textarea:focus{
+textarea,
+input:focus,
+textarea:focus {
     width: 100%;
     padding: 1rem;
     color: var(--black);
     border: none;
-    background-color: rgba(0,0,0,0.1);
+    background-color: rgba(0, 0, 0, 0.1);
     box-shadow: none;
     cursor: pointer;
-    margin: 1rem 0 2rem;
+    margin-bottom: 1rem; /* Agrego margen inferior */
 }
-textarea{
+
+textarea {
     resize: none;
 }
-form button{
+
+form button {
     background-color: var(--secondary);
     color: var(white);
-    margin: 3rem;
+    margin: 1rem 0; /* Ajusto los márgenes superior e inferior */
     border: none;
     padding: 1rem;
     border-radius: 15px;
     cursor: pointer;
-    transition: background-color .3s ease ;
+    transition: background-color 0.3s ease;
 }
-form button:hover{
+
+form button:hover {
     background-color: var(--secondary-dark);
 }
-#social-media img{
+
+#social-media img {
     border-radius: 10rem;
     background-color: var(--white);
-    transition: all ease .3s;
+    transition: all ease 0.3s;
     margin: 20px;
+}
 
-}
-#linkedin:hover{
-    background-color: #0077b5;
-}
-#github:hover{
-    background-color: black;
-}
-#youtube:hover{
-    background-color: rgb(186, 10, 10);
-}
-#invisible{
-    text-decoration: none;
+/* Media query para hacer que los elementos se apilen en pantallas pequeñas */
+@media (max-width: 600px) {
+    form label {
+        width: 100%;
+    }
 }

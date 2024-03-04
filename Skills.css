@@ -1,15 +1,17 @@
 #skillset>div {
   position: relative;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-columns: repeat(4, 1fr);
   grid-gap: 1rem;
   margin: 1rem;
 }
 
 #skillset img {
   border-radius: 1rem;
-  max-width: 7rem;
-  max-height: 7rem;
+  max-width: calc(66.67% - 1rem); /* Dos tercios del ancho total, menos el espacio entre las imágenes */
+  max-height: 100px; /* Tamaño máximo de altura ajustado a 100px (puedes cambiar este valor) */
+  height: auto;
+  width: auto;
   cursor: pointer;
 }
 
@@ -21,9 +23,6 @@
   border-radius: 0.5rem;
   position: absolute;
   z-index: 2;
-  /* top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%); */
   transform: translate(0, -100%);
   opacity: 0;
   transition: opacity 0.3s ease, transform 0.3s ease;
@@ -32,7 +31,6 @@
 
 #skillset div:hover > .tooltip {
   opacity: 1;
-  /* transform: translate(-50%, -50%); */
 }
 
 .tooltip::after {
@@ -44,4 +42,10 @@
   border-width: 5px;
   border-style: solid;
   border-color: rgba(0, 0, 0, 0.75) transparent transparent transparent;
+}
+
+@media (max-width: 768px) {
+  #skillset>div {
+      grid-template-columns: repeat(2, 1fr);
+  }
 }
